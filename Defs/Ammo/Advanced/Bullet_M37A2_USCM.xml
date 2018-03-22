@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoM37A2_USCM</defName>
+      <label>M37A2</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_M37A2_USCM</defName>
+    <label>M37A2</label>
+    <ammoTypes>
+      <Ammo_M37A2_USCM>Bullet_M37A2_USCM</Ammo_M37A2_USCM>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="M37A2_USCMBase" ParentName="AmmoBase" Abstract="True">
+    <description>M37A2 ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoM37A2_USCM</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="M37A2_USCMBase">
+    <defName>Ammo_M4A3_USCM</defName>
+    <label>M4A3 cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/FMJ</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>BuckShot</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseM37A2_USCM" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseM37A2_USCM">
+    <defName>Bullet_M37A2_USCM</defName>
+    <label>330mm</label>
+	<projectile>
+		<damageAmountBase>6</damageAmountBase>
+		<pelletCount>18</pelletCount>
+		<armorPenetration>0.45</armorPenetration>
+		<spreadMult>17.8</spreadMult>
+	</projectile>
+  </ThingDef>
+	
+</Defs>

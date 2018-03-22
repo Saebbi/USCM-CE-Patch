@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>USCM CE Patch</name>
+	<author>Saebbi</author>
+	<url></url>
+	<targetVersion>0.18.0</targetVersion>
+	<description>Patches the USCM mods to work with Combat Extended.</description>
+</ModMetaData>

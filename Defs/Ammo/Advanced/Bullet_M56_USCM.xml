@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoM56_USCM</defName>
+      <label>M56</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_M56_USCM</defName>
+    <label>M56</label>
+    <ammoTypes>
+      <Ammo_M56_USCM>Bullet_M56_USCM</Ammo_M56_USCM>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="M56_USCMBase" ParentName="AmmoBase" Abstract="True">
+    <description>M56 ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoM56_USCM</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="M56_USCMBase">
+    <defName>Ammo_M56_USCM</defName>
+    <label>M56 cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/FMJ</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseM56_USCM" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>110</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseM56_USCM">
+    <defName>Bullet_M56_USCM</defName>
+    <label>10x28mm</label>
+    <projectile>
+      <damageAmountBase>15</damageAmountBase>
+      <armorPenetration>0.75</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+</Defs>

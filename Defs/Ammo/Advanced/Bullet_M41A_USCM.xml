@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoM41A_USCM</defName>
+      <label>M41A</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_M41A_USCM</defName>
+    <label>M41A</label>
+    <ammoTypes>
+      <Ammo_M41A_USCM>Bullet_M41A_USCM</Ammo_M41A_USCM>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="M41A_USCMBase" ParentName="AmmoBase" Abstract="True">
+    <description>M41A ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoM41A_USCM</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="M41A_USCMBase">
+    <defName>Ammo_M41A_USCM</defName>
+    <label>M41A cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/FMJ</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseM41A_USCM" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>110</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseM41A_USCM">
+    <defName>Bullet_M41A_USCM</defName>
+    <label>10x24mm</label>
+    <projectile>
+      <damageAmountBase>10</damageAmountBase>
+      <armorPenetration>0.75</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+</Defs>

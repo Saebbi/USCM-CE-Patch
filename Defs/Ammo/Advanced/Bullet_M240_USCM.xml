@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoM240_USCM</defName>
+      <label>M240</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_M240_USCM</defName>
+    <label>Flamethrower ammo</label>
+    <ammoTypes>
+      <Ammo_M240_USCM>Bullet_M240_USCM</Ammo_M240_USCM>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="M240_USCMBase" ParentName="AmmoBase" Abstract="True">
+    <description>M240</description>
+    <statBases>
+	  <Mass>0.02</Mass>
+	  <Bulk>0.05</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoM240_USCM</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="M240_USCMBase">
+    <defName>Ammo_M240_USCM</defName>
+    <label>Flamethrower cartridge</label>
+    <graphicData>
+      <texPath>Things/IG/Ammo/Bolt_Standard</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.1</MarketValue>
+    </statBases>
+    <ammoClass>ThermobaricFuel</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseM240_USCM" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Projectile/Jet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>PrometheumFlame</damageDef>
+      <speed>20</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseM240_USCM">
+    <defName>Bullet_M240_USCM</defName>
+    <label>Flamethrower</label>
+    <projectile>
+      <damageAmountBase>3</damageAmountBase>
+      <armorPenetration>0.3</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+</Defs>
